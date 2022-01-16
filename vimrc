@@ -34,3 +34,10 @@ set softtabstop=4
 set shiftwidth=4
 " Change <Leader> to , so it's more easily accessible
 let mapleader=","
+
+
+
+"""
+""" configure vim-lsc plugin
+"""
+let g:lsc_server_commands = {'go': 'gopls'}
