@@ -35,8 +35,11 @@ set softtabstop=4
 set shiftwidth=4
 " Change <Leader> to , so it's more easily accessible
 let mapleader=","
-" ensure  that backspace works for eol and when vim adds auto identation.
-set backspace=indent,eol,start
+if has('macunix')
+	" ensure  that backspace works for eol and when vim adds auto identation.
+	" this is broken in macs
+	set backspace=indent,eol,start
+endif
 " better contrast. I always use dark terminals
 set background=dark
 
@@ -49,3 +52,9 @@ set ruf=%30(%=%#LineNr#%.50F\ [%{strlen(&ft)?&ft:'none'}]\ %l:%c\ %p%%%)
 """
 " toggle spell check with F12
 map <F12> :set spell!<CR>
+
+
+" read personal/private vim configuration (keep last to override)
+set rtp^=~/.vimpersonal
+set rtp^=~/.vimprivate
+set rtp^=~/.vimwork
