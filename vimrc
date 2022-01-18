@@ -1,7 +1,4 @@
 set nocompatible
-" filetype plugin indent off
-"
-" packloadall
 filetype plugin indent on
 
 " Use 256 colors
@@ -27,6 +24,8 @@ set history=1000
 " Automatically indent when in insert mode
 set autoindent
 set smartindent
+" Auto write files when changing when multiple files open
+set autowrite
 " A set of patterns to ignore when expanding wildcards
 set wildignore+=*.swp,*.bak,*.pyc,*.class,*.o,*.a
 " By default use 4 character tabs on screen. But to not expand tabs to spaces.
@@ -38,3 +37,15 @@ set shiftwidth=4
 let mapleader=","
 " ensure  that backspace works for eol and when vim adds auto identation.
 set backspace=indent,eol,start
+" better contrast. I always use dark terminals
+set background=dark
+
+" make sure ruler is on and show something useful.
+set ruler
+set ruf=%30(%=%#LineNr#%.50F\ [%{strlen(&ft)?&ft:'none'}]\ %l:%c\ %p%%%)
+
+"""
+""" Keyboard mappings
+"""
+" toggle spell check with F12
+map <F12> :set spell!<CR>
