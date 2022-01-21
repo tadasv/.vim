@@ -10,3 +10,6 @@
 [submodule "pack/plugins/start/vim-lsp"]
 	path = pack/plugins/start/vim-lsp
 	url = https://github.com/prabirshrestha/vim-lsp
+[submodule "pack/plugins/start/vim-tadasv-zet"]
+	path = pack/plugins/start/vim-tadasv-zet
+	url = https://github.com/tadasv/vim-tadasv-zet
