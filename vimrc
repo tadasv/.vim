@@ -8,12 +8,12 @@ set number
 " Make line numbers relative to the current line of the cursor so it's easier
 " to perform block operations relative to the current line.
 set relativenumber
-" Turn on syntax highlighting
-syntax on
+" Syntax highlighting. No colors per Rob Pike
+syntax off
 " change the default window split order
 set splitright splitbelow
-" Enable spell check
-set spell
+" Spell check
+set nospell
 " Where to place temporary swap files. Make sure that these directories exists
 " and are only accessible by the current user.
 set directory=~/.vim/swap,~/tmp
@@ -40,8 +40,6 @@ if has('macunix')
 	" this is broken in macs
 	set backspace=indent,eol,start
 endif
-" better contrast. I always use dark terminals
-set background=dark
 
 " make sure ruler is on and show something useful.
 set ruler

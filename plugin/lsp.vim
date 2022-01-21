@@ -61,6 +61,8 @@ let g:lsp_document_highlight_enabled = 0
 let g:lsp_log_verbose = 0
 " don't show popup automatically. Rely on tab instead.
 let g:asyncomplete_auto_popup = 0
+" use preview window because K fucks up page up/down otherwise!!!
+let g:lsp_hover_ui="preview"
 
 function! s:check_back_space() abort
     let col = col('.') - 1
