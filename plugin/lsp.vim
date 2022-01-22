@@ -56,7 +56,7 @@ inoremap <expr> <cr>    pumvisible() ? asyncomplete#close_popup() : "\<cr>"
 " some global vim-lsp configuration. Pretty much deactivate everything to make
 " it faster and stick to `K` or tab completion.
 let g:lsp_fold_enabled = 0
-let g:lsp_diagnostics_enabled = 0  
+let g:lsp_diagnostics_enabled = 1
 let g:lsp_document_highlight_enabled = 0
 let g:lsp_log_verbose = 0
 " don't show popup automatically. Rely on tab instead.
