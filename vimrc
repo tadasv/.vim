@@ -9,7 +9,7 @@ set number
 " to perform block operations relative to the current line.
 set relativenumber
 " Syntax highlighting. No colors per Rob Pike
-syntax off
+syntax on
 " change the default window split order
 set splitright splitbelow
 " Spell check
