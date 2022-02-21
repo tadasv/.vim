@@ -10,6 +10,14 @@ if executable('gopls')
     autocmd BufWritePre *.go LspDocumentFormatSync
 endif
 
+if executable('haskell-language-server-wrapper')
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'hls',
+        \ 'cmd': {server_info->[&shell, &shellcmdflag, 'haskell-language-server-wrapper --lsp']},
+        \ 'whitelist': ['haskell'],
+        \ })
+endif
+
 if executable('typescript-language-server')
     au User lsp_setup call lsp#register_server({
         \ 'name': 'typescript-language-server',
@@ -57,6 +65,7 @@ inoremap <expr> <cr>    pumvisible() ? asyncomplete#close_popup() : "\<cr>"
 " it faster and stick to `K` or tab completion.
 let g:lsp_fold_enabled = 0
 let g:lsp_diagnostics_enabled = 1
+let g:lsp_diagnostics_echo_cursor = 1
 let g:lsp_document_highlight_enabled = 0
 let g:lsp_log_verbose = 0
 " don't show popup automatically. Rely on tab instead.
