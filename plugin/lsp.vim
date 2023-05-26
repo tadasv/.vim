@@ -10,6 +10,15 @@ if executable('gopls')
     autocmd BufWritePre *.go LspDocumentFormatSync
 endif
 
+if executable('templ')
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'templ',
+        \ 'cmd': {server_info->[&shell, &shellcmdflag, 'templ lsp']},
+        \ 'whitelist': ['templ'],
+        \ })
+    autocmd BufWritePre *.templ LspDocumentFormatSync
+endif
+
 if executable('haskell-language-server-wrapper')
     au User lsp_setup call lsp#register_server({
         \ 'name': 'hls',
